@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jollof Pages | Graphic Novel Story OS</title>
+    <meta name="description" content="Jollof Pages is a graphic novel story operating system for building characters, worlds, timelines, canon, scenes, pages, panels, visual continuity, and page composition in one connected creative workspace." />
+    <meta name="keywords" content="Jollof Pages, graphic novel software, comic creation app, story OS, worldbuilding software, character builder, canon wiki, scene planner, page composition, panel planner, visual continuity, comic writing dashboard" />
+    <meta name="author" content="Amaete Umanah" />
+
+    <meta property="og:title" content="Jollof Pages | Graphic Novel Story OS" />
+    <meta property="og:description" content="A connected graphic novel story operating system for planning, writing, visualizing, and maintaining continuity across characters, worldbuilding, scenes, pages, and panels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jollof Pages" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jollof Pages | Graphic Novel Story OS" />
+    <meta name="twitter:description" content="Plan, build, write, visualize, and maintain continuity for graphic novels in one connected creative operating system." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="global-header">
+        <div class="brand-block">
+          <div class="brand-logo">JP</div>
+          <div>
+            <h1>Jollof Pages</h1>
+            <p>A graphic novel story operating system</p>
+          </div>
+        </div>
+        <div class="context-line">Jollof Pages | Series: The Shadow Chronicles | Book 1 | Issue 4 | Sequence 3 | Scene 5a | Page 16</div>
+        <div class="status-line">
+          <span>Words 7,805 / 8,500-10,000</span>
+          <span class="saved">Saved</span>
+          <button>Admin</button>
+        </div>
+      </header>
+
+      <nav class="top-tabs" id="workspaceTabs"></nav>
+
+      <main class="main-layout">
+        <aside class="utility-rail">
+          <button>Project</button><button>Refs</button><button>Chars</button><button>Scenes</button>
+          <button>History</button><button>Cont.</button><button>Export</button><button>Tools</button>
+          <button>Notes</button><button>Activity</button><button>Config</button>
+        </aside>
+
+        <section class="workspace" id="workspaceContainer"></section>
+      </main>
+    </div>
+
+    <template id="storyDashboardTemplate">
+      <div class="workspace-screen active">
+        <div class="screen-grid dashboard-grid">
+          <aside class="column left-col">
+            <section class="panel"><h3>Sequence Overview</h3><ul><li>4.5a Into the Catacombs — Drafting</li><li>4.5b The First Symbol — Planned</li><li>4.6 Cult Pursuit — Planned</li></ul></section>
+            <section class="panel"><h3>Objective / Lore</h3><p>Scene must establish torchlight-only descent, confirm relic resonance, and lock pre-reveal secrecy rules.</p></section>
+            <section class="panel"><h3>Director's Notes</h3><ul><li>Maintain dread + mythic pressure.</li><li>Page-turn reveal should be torch flicker.</li><li>No direct visual of the Veil entity.</li></ul></section>
+            <section class="panel"><h3>Scene Draft Setup</h3><ul><li>Required prop: Maya satchel + journal.</li><li>Required visual motif: spiral symbols.</li><li>Continuity warning: John's torch is replacement.</li></ul></section>
+            <section class="panel"><h3>Activity</h3><p>Canon Keeper flagged 2 contradictions. Continuity Editor marked 1 unresolved timeline dependency.</p></section>
+          </aside>
+
+          <div class="column center-col">
+            <section class="panel scene-draft">
+              <div class="panel-header"><h3>Scene Draft Window</h3><div class="tags"><span>Scene 5a</span><span>Issue 4</span></div></div>
+              <textarea>John and Maya descend into the catacombs. Every footstep echoes like a warning. The carved spiral symbols begin to shimmer as Maya brushes her fingertips over the stone.
+
+JOHN: We move now. No side paths.
+MAYA: The wall is warm... this wasn't here before.
+
+[Panel cue: wide arch tunnel, backlit dust, torches reflected in wet stone.]</textarea>
+              <div class="action-row"><button>Accept Scene</button><button>Run Continuity Check</button><button>Send to Recap</button><button>Revise Scene</button><button>Lock Scene Notes</button><button>Generate Visual</button></div>
+            </section>
+
+            <section class="panel visualization">
+              <div class="panel-header"><h3>Scene Visualization</h3><div class="tags"><span>Approved Ref Linked</span></div></div>
+              <div class="visual-placeholder">Storyboard Preview / Composition Reference</div>
+              <div class="action-row"><button>Generate Visual</button><button>Revise Visual</button><button>Compare Reference</button><button>Lock Visual Notes</button><button>Add Variant</button><button>Prior Scene Ref</button></div>
+            </section>
+
+            <section class="panel agents">
+              <h3>Agents Console</h3>
+              <div class="agent-grid">
+                <article><h4>Story Director</h4><p>Status: Active</p><p>Task: tighten Issue 4 sequence objectives.</p></article>
+                <article><h4>Canon Keeper</h4><p>Status: Reviewing</p><p>Task: validate relic origin continuity.</p></article>
+                <article><h4>Scene Writer</h4><p>Status: Drafting</p><p>Task: panel dialogue pass for page 16.</p></article>
+                <article><h4>Continuity Editor</h4><p>Status: Needs Input</p><p>Task: resolve event gate for Maya wrist mark reveal.</p></article>
+              </div>
+            </section>
+
+            <section class="panel shared-chat">
+              <h3>Shared Agent Chat</h3>
+              <div class="chat-log"><p><strong>You:</strong> Canon Keeper — has this symbol appeared before Scene 5a?</p><p><strong>Canon Keeper:</strong> Yes. First referenced Issue 1 page 9; visual orientation must remain clockwise.</p></div>
+              <input placeholder="Ask Story Director, Canon Keeper, Scene Writer, or Continuity Editor..." />
+            </section>
+          </div>
+
+          <aside class="column right-col">
+            <section class="panel"><h3>Continuity Warnings</h3><ul><li>Timeline: Catacomb collapse must predate Issue 2.</li><li>Knowledge: John cannot know wrist-mark meaning yet.</li><li>Lore: Relic glow description differs from Canon entry.</li></ul></section>
+            <section class="panel"><h3>Active Threads</h3><ul><li>The Lost Druid Relic — Open</li><li>John's Hidden Past — Setup</li><li>The Ritual Circle — Active</li></ul></section>
+            <section class="panel"><h3>Characters in Scene</h3><ul><li>John Walker — status: armed, suspicious</li><li>Maya Reed — status: curious, cautious</li></ul></section>
+            <section class="panel"><h3>Visual Continuity</h3><p>Linked refs: Catacomb Passage v2, Torchlight Profile Sheet, Symbol Atlas #3.</p></section>
+            <section class="panel"><h3>Costume Consistency</h3><p>Maya satchel on left shoulder. John's coat has no insignia.</p></section>
+            <section class="panel"><h3>Prop Consistency</h3><p>Torch A active, Journal weathered brown, Binding Relic not yet visible.</p></section>
+          </aside>
+        </div>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
