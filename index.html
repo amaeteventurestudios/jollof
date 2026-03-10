@@ -1,112 +1,927 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jollof Pages | Graphic Novel Story OS</title>
-    <meta name="description" content="Jollof Pages is a graphic novel story operating system for building characters, worlds, timelines, canon, scenes, pages, panels, visual continuity, and page composition in one connected creative workspace." />
-    <meta name="keywords" content="Jollof Pages, graphic novel software, comic creation app, story OS, worldbuilding software, character builder, canon wiki, scene planner, page composition, panel planner, visual continuity, comic writing dashboard" />
-    <meta name="author" content="Amaete Umanah" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollof Pages | Graphic Novel Story OS</title>
+  <meta name="description" content="Jollof Pages is a graphic novel story operating system for building characters, worlds, timelines, canon, scenes, pages, panels, visual continuity, and page composition in one connected creative workspace." />
+  <meta name="keywords" content="Jollof Pages, graphic novel software, comic creation app, story OS, worldbuilding software, character builder, canon wiki, scene planner, page composition, panel planner, visual continuity, comic writing dashboard" />
+  <meta name="author" content="Amaete Umanah" />
+  <meta property="og:title" content="Jollof Pages | Graphic Novel Story OS" />
+  <meta property="og:description" content="A connected graphic novel story operating system for planning, writing, visualizing, and maintaining continuity across characters, worldbuilding, scenes, pages, and panels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jollof Pages" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jollof Pages | Graphic Novel Story OS" />
+  <meta name="twitter:description" content="Plan, build, write, visualize, and maintain continuity for graphic novels in one connected creative operating system." />
 
-    <meta property="og:title" content="Jollof Pages | Graphic Novel Story OS" />
-    <meta property="og:description" content="A connected graphic novel story operating system for planning, writing, visualizing, and maintaining continuity across characters, worldbuilding, scenes, pages, and panels." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Jollof Pages" />
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jollof Pages | Graphic Novel Story OS" />
-    <meta name="twitter:description" content="Plan, build, write, visualize, and maintain continuity for graphic novels in one connected creative operating system." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <header class="global-header">
-        <div class="brand-block">
-          <div class="brand-logo">JP</div>
-          <div>
-            <h1>Jollof Pages</h1>
-            <p>A graphic novel story operating system</p>
-          </div>
-        </div>
-        <div class="context-line">Jollof Pages | Series: The Shadow Chronicles | Book 1 | Issue 4 | Sequence 3 | Scene 5a | Page 16</div>
-        <div class="status-line">
-          <span>Words 7,805 / 8,500-10,000</span>
-          <span class="saved">Saved</span>
-          <button>Admin</button>
-        </div>
-      </header>
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/core.css" />
+</head>
+<body>
 
-      <nav class="top-tabs" id="workspaceTabs"></nav>
+<div id="app">
 
-      <main class="main-layout">
-        <aside class="utility-rail">
-          <button>Project</button><button>Refs</button><button>Chars</button><button>Scenes</button>
-          <button>History</button><button>Cont.</button><button>Export</button><button>Tools</button>
-          <button>Notes</button><button>Activity</button><button>Config</button>
-        </aside>
-
-        <section class="workspace" id="workspaceContainer"></section>
-      </main>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOP GLOBAL BAR                                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <div class="brand-logo">JP</div>
+      <div>
+        <div class="brand-name">Jollof Pages</div>
+        <div class="brand-descriptor">Story OS</div>
+      </div>
     </div>
 
-    <template id="storyDashboardTemplate">
-      <div class="workspace-screen active">
-        <div class="screen-grid dashboard-grid">
-          <aside class="column left-col">
-            <section class="panel"><h3>Sequence Overview</h3><ul><li>4.5a Into the Catacombs — Drafting</li><li>4.5b The First Symbol — Planned</li><li>4.6 Cult Pursuit — Planned</li></ul></section>
-            <section class="panel"><h3>Objective / Lore</h3><p>Scene must establish torchlight-only descent, confirm relic resonance, and lock pre-reveal secrecy rules.</p></section>
-            <section class="panel"><h3>Director's Notes</h3><ul><li>Maintain dread + mythic pressure.</li><li>Page-turn reveal should be torch flicker.</li><li>No direct visual of the Veil entity.</li></ul></section>
-            <section class="panel"><h3>Scene Draft Setup</h3><ul><li>Required prop: Maya satchel + journal.</li><li>Required visual motif: spiral symbols.</li><li>Continuity warning: John's torch is replacement.</li></ul></section>
-            <section class="panel"><h3>Activity</h3><p>Canon Keeper flagged 2 contradictions. Continuity Editor marked 1 unresolved timeline dependency.</p></section>
-          </aside>
+    <div class="topbar-breadcrumb">
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Series:</span></span>
+      <span class="breadcrumb-item highlight">The Shadow Chronicles</span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Book</span> <span class="active">1</span></span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Issue</span> <span class="active">4</span></span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Seq.</span> <span class="active">3</span></span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Scene</span> <span class="active">5a</span></span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item"><span class="breadcrumb-label">Page</span> <span class="active">16</span></span>
+      <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="breadcrumb-item active">Into the Catacombs</span>
+    </div>
 
-          <div class="column center-col">
-            <section class="panel scene-draft">
-              <div class="panel-header"><h3>Scene Draft Window</h3><div class="tags"><span>Scene 5a</span><span>Issue 4</span></div></div>
-              <textarea>John and Maya descend into the catacombs. Every footstep echoes like a warning. The carved spiral symbols begin to shimmer as Maya brushes her fingertips over the stone.
+    <div class="topbar-meta">
+      <div class="word-count">
+        <span class="label">words</span>
+        <span class="current">7,805</span>
+        <span class="sep">/</span>
+        <span class="target">8,500–10,000</span>
+      </div>
+      <div class="save-status">
+        <span class="save-status-dot"></span>
+        Saved
+      </div>
+    </div>
 
-JOHN: We move now. No side paths.
-MAYA: The wall is warm... this wasn't here before.
+    <div class="topbar-actions">
+      <button class="topbar-btn" data-tooltip="Notifications"><i class="fa-solid fa-bell"></i></button>
+      <button class="topbar-btn" data-tooltip="Settings"><i class="fa-solid fa-gear"></i></button>
+      <div class="user-pill">
+        <div class="user-avatar">AU</div>
+        <span class="user-name">Admin</span>
+        <i class="fa-solid fa-chevron-down" style="font-size:9px;color:var(--text-dim)"></i>
+      </div>
+    </div>
+  </header>
 
-[Panel cue: wide arch tunnel, backlit dust, torches reflected in wet stone.]</textarea>
-              <div class="action-row"><button>Accept Scene</button><button>Run Continuity Check</button><button>Send to Recap</button><button>Revise Scene</button><button>Lock Scene Notes</button><button>Generate Visual</button></div>
-            </section>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MAIN TAB ROW                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <nav class="main-tabrow" id="mainTabRow">
+    <div class="main-tab active" data-tab="dashboard">
+      <i class="fa-solid fa-gauge-high tab-icon"></i> Story Dashboard
+    </div>
+    <div class="main-tab" data-tab="setup">
+      <i class="fa-solid fa-sliders tab-icon"></i> Series Setup
+    </div>
+    <div class="main-tab" data-tab="characters">
+      <i class="fa-solid fa-users tab-icon"></i> Characters
+      <span class="tab-badge">24</span>
+    </div>
+    <div class="main-tab" data-tab="world">
+      <i class="fa-solid fa-earth-americas tab-icon"></i> World
+    </div>
+    <div class="main-tab" data-tab="factions">
+      <i class="fa-solid fa-shield-halved tab-icon"></i> Factions
+    </div>
+    <div class="main-tab" data-tab="timeline">
+      <i class="fa-solid fa-timeline tab-icon"></i> Timeline
+    </div>
+    <div class="main-tab" data-tab="wiki">
+      <i class="fa-solid fa-book-open tab-icon"></i> Canon Wiki
+    </div>
+    <div class="main-tab" data-tab="planning">
+      <i class="fa-solid fa-layer-group tab-icon"></i> Story Planning
+    </div>
+    <div class="main-tab" data-tab="builder">
+      <i class="fa-solid fa-pen-nib tab-icon"></i> Scene · Page · Panel
+    </div>
+    <div class="main-tab" data-tab="visuals">
+      <i class="fa-solid fa-eye tab-icon"></i> Visual Continuity
+      <span class="tab-badge warn">3</span>
+    </div>
+    <div class="main-tab" data-tab="composition">
+      <i class="fa-solid fa-table-cells tab-icon"></i> Page Composition
+    </div>
+    <div class="main-tab" data-tab="agents">
+      <i class="fa-solid fa-robot tab-icon"></i> Agent Console
+    </div>
+  </nav>
 
-            <section class="panel visualization">
-              <div class="panel-header"><h3>Scene Visualization</h3><div class="tags"><span>Approved Ref Linked</span></div></div>
-              <div class="visual-placeholder">Storyboard Preview / Composition Reference</div>
-              <div class="action-row"><button>Generate Visual</button><button>Revise Visual</button><button>Compare Reference</button><button>Lock Visual Notes</button><button>Add Variant</button><button>Prior Scene Ref</button></div>
-            </section>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MAIN CONTENT AREA                                       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="main-content">
 
-            <section class="panel agents">
-              <h3>Agents Console</h3>
-              <div class="agent-grid">
-                <article><h4>Story Director</h4><p>Status: Active</p><p>Task: tighten Issue 4 sequence objectives.</p></article>
-                <article><h4>Canon Keeper</h4><p>Status: Reviewing</p><p>Task: validate relic origin continuity.</p></article>
-                <article><h4>Scene Writer</h4><p>Status: Drafting</p><p>Task: panel dialogue pass for page 16.</p></article>
-                <article><h4>Continuity Editor</h4><p>Status: Needs Input</p><p>Task: resolve event gate for Maya wrist mark reveal.</p></article>
+    <!-- LEFT UTILITY RAIL -->
+    <aside class="utility-rail">
+      <button class="rail-btn active" data-tooltip="Project" id="rail-project">
+        <i class="fa-solid fa-folder-open"></i>
+        <span class="rail-btn-label">Project</span>
+      </button>
+      <button class="rail-btn" data-tooltip="References">
+        <i class="fa-solid fa-bookmark"></i>
+        <span class="rail-btn-label">Refs</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Characters">
+        <i class="fa-solid fa-users"></i>
+        <span class="rail-btn-label">Chars</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Scenes">
+        <i class="fa-solid fa-film"></i>
+        <span class="rail-btn-label">Scenes</span>
+      </button>
+      <div class="rail-divider"></div>
+      <button class="rail-btn" data-tooltip="Timeline">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span class="rail-btn-label">History</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Continuity" style="position:relative">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="rail-btn-label">Cont.</span>
+        <span class="rail-badge"></span>
+      </button>
+      <div class="rail-divider"></div>
+      <button class="rail-btn" data-tooltip="Exports">
+        <i class="fa-solid fa-file-export"></i>
+        <span class="rail-btn-label">Export</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Tools">
+        <i class="fa-solid fa-wrench"></i>
+        <span class="rail-btn-label">Tools</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Comments">
+        <i class="fa-solid fa-message"></i>
+        <span class="rail-btn-label">Notes</span>
+      </button>
+      <div class="rail-divider"></div>
+      <button class="rail-btn" data-tooltip="Activity">
+        <i class="fa-solid fa-bolt"></i>
+        <span class="rail-btn-label">Activity</span>
+      </button>
+      <button class="rail-btn" data-tooltip="Settings">
+        <i class="fa-solid fa-gear"></i>
+        <span class="rail-btn-label">Config</span>
+      </button>
+    </aside>
+
+    <!-- ═══════════════════════════════════════════ DASHBOARD ═ -->
+    <div class="workspace active dashboard-layout" id="ws-dashboard">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-left">
+
+        <!-- Sequence Overview -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-list-ol"></i> Sequence Overview</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-ellipsis"></i></button>
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body" style="padding:6px">
+            <div class="scene-item drafting active">
+              <span class="scene-num">5.</span>
+              <div class="scene-info">
+                <div class="scene-name">Into the Catacombs</div>
+                <div class="scene-sub">Pg 14–18 · 3 panels</div>
               </div>
-            </section>
+              <span class="scene-status-tag tag-drafting">Drafting</span>
+            </div>
+            <div class="scene-item">
+              <span class="scene-num">6.</span>
+              <div class="scene-info">
+                <div class="scene-name">The Crypt of Secrets</div>
+                <div class="scene-sub">Pg 19–22 · planned</div>
+              </div>
+              <span class="scene-status-tag tag-planned">Planned</span>
+            </div>
+            <div class="scene-item">
+              <span class="scene-num">7.</span>
+              <div class="scene-info">
+                <div class="scene-name">Vanquish the Darkness</div>
+                <div class="scene-sub">Pg 23–27 · planned</div>
+              </div>
+              <span class="scene-status-tag tag-planned">Planned</span>
+            </div>
+            <div class="scene-item" style="opacity:0.5">
+              <span class="scene-num">8.</span>
+              <div class="scene-info">
+                <div class="scene-name">The Relic Awakens</div>
+                <div class="scene-sub">TBD</div>
+              </div>
+              <span class="scene-status-tag tag-review">TBD</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;padding:6px 8px;border-top:1px solid var(--border-subtle);margin-top:4px">
+              <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-chevron-left"></i></button>
+              <span style="font-size:10px;color:var(--text-dim)">Seq 1</span>
+              <button class="btn btn-ghost btn-xs">1</button>
+              <button class="btn btn-ghost btn-xs" style="color:var(--accent-blue)">2</button>
+              <button class="btn btn-ghost btn-xs">3</button>
+              <button class="btn btn-ghost btn-xs">4</button>
+              <span style="font-size:10px;color:var(--text-dim)">…</span>
+              <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
 
-            <section class="panel shared-chat">
-              <h3>Shared Agent Chat</h3>
-              <div class="chat-log"><p><strong>You:</strong> Canon Keeper — has this symbol appeared before Scene 5a?</p><p><strong>Canon Keeper:</strong> Yes. First referenced Issue 1 page 9; visual orientation must remain clockwise.</p></div>
-              <input placeholder="Ask Story Director, Canon Keeper, Scene Writer, or Continuity Editor..." />
-            </section>
+        <!-- Objective Lore -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-crosshairs"></i> Objective Lore</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="lore-item">
+              <span class="lore-dot" style="background:var(--accent-gold)"></span>
+              <span>Re-confirm characters with major antagonists. Characters therein must align on story lore.</span>
+            </div>
+            <div class="lore-item">
+              <span class="lore-dot" style="background:var(--accent-blue)"></span>
+              <span>Reveal reach of the Fanstod to be guarded; characters therein must stay silent.</span>
+            </div>
+            <div class="lore-item">
+              <span class="lore-dot"></span>
+              <span>Belt enforcer copy do no messenages.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Director's Notes -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-clapperboard"></i> Director's Notes</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-pencil"></i></button>
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Create a sense of menace</span></div>
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Reveal a cultist leader is nearby</span></div>
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Lay out the next cliffhanger</span></div>
+            <div class="check-item"><i class="fa-solid fa-minus" style="color:var(--text-dim)"></i><span style="color:var(--text-muted)">End on an unresolved visual beat</span></div>
+          </div>
+        </div>
+
+        <!-- Scene Draft Setup -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-list-check"></i> Scene Draft Setup</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Old catacombs, &fnof;nuance</span></div>
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Reveal the Mapholend a piens</span></div>
+            <div class="check-item"><i class="fa-solid fa-check"></i><span>Lay out the next scenes:</span></div>
+            <div class="check-item"><i class="fa-solid fa-xmark"></i><span>Visual echo from Issue 1 · Pg 3</span></div>
+            <div class="check-item"><i class="fa-solid fa-xmark"></i><span>Torch prop continuity confirmed</span></div>
+          </div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-bolt"></i> Activity</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="activity-item">
+              <span class="activity-time">13:07</span>
+              <i class="fa-solid fa-robot activity-icon" style="color:var(--accent-blue)"></i>
+              <span>Continuity Refresh Executed.</span>
+            </div>
+            <div class="activity-item">
+              <span class="activity-time">11:06</span>
+              <i class="fa-solid fa-megaphone activity-icon" style="color:var(--accent-gold)"></i>
+              <span>Dispatch: Shot Up Maly</span>
+            </div>
+            <div class="activity-item">
+              <span class="activity-time">11:08</span>
+              <i class="fa-solid fa-rotate activity-icon" style="color:var(--status-active)"></i>
+              <span>Replace Drone Respond</span>
+            </div>
+            <div style="padding:6px 0;padding-top:8px;display:flex;gap:6px;align-items:center">
+              <input class="chat-input" style="font-size:11px;padding:5px 8px" placeholder="Comment to story…" />
+              <button class="chat-send-btn" style="width:26px;height:26px;font-size:10px"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-left -->
+
+      <!-- CENTER COLUMN -->
+      <div class="col-center">
+
+        <!-- Scene Draft Window -->
+        <div class="scene-draft-panel">
+          <div class="scene-draft-header">
+            <div class="scene-draft-title">Scene Draft</div>
+            <div class="scene-draft-controls">
+              <button class="panel-btn" data-tooltip="Revise"><i class="fa-solid fa-rotate-left"></i></button>
+              <button class="panel-btn" data-tooltip="Lock"><i class="fa-solid fa-lock-open"></i></button>
+              <button class="panel-btn" data-tooltip="Expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+          <textarea class="scene-draft-textarea" id="sceneDraftTextarea">John and Maya crept deeper into the catacombs, their footsteps echoing off the damp stone. Shadows clung to the ancient walls, barely held back by their flickering torches.
+
+"We need to find the chamber with the relic before the cultists do." Maya whispered.
+
+John nodded, glancing back warily. "Stay close." he murmured as they advanced.
+
+[PANEL BREAK — wide establishing shot, dark arched tunnel, torchlight catching carved symbols]
+
+The symbols carved into the stone grew stranger — older — and Maya reached out a trembling hand to trace one. The moment she touched it, the torch in John's grip flickered violently.
+
+"Did you feel that?" she breathed.</textarea>
+          <div class="scene-draft-actions">
+            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-check"></i> Accept Scene</button>
+            <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-magnifying-glass"></i> Run Continuity Check</button>
+            <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-lines"></i> Send to Recap</button>
+            <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-wand-magic-sparkles"></i> Revise Scene</button>
+            <div style="margin-left:auto;display:flex;gap:4px">
+              <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-lock"></i> Lock Notes</button>
+              <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-image"></i> Generate Visual</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene Visualization -->
+        <div class="viz-panel">
+          <div class="viz-panel-header">
+            <div class="viz-panel-title">Scene Visualization</div>
+            <div class="viz-panel-controls">
+              <button class="btn btn-ghost btn-xs" data-tooltip="Clarence Rielle">Clarence Rielle</button>
+              <button class="btn btn-ghost btn-xs" data-tooltip="Sensor Ketsu">Sensor Ketsu</button>
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Visual</button>
+              <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-code-compare"></i> Compare</button>
+            </div>
           </div>
 
-          <aside class="column right-col">
-            <section class="panel"><h3>Continuity Warnings</h3><ul><li>Timeline: Catacomb collapse must predate Issue 2.</li><li>Knowledge: John cannot know wrist-mark meaning yet.</li><li>Lore: Relic glow description differs from Canon entry.</li></ul></section>
-            <section class="panel"><h3>Active Threads</h3><ul><li>The Lost Druid Relic — Open</li><li>John's Hidden Past — Setup</li><li>The Ritual Circle — Active</li></ul></section>
-            <section class="panel"><h3>Characters in Scene</h3><ul><li>John Walker — status: armed, suspicious</li><li>Maya Reed — status: curious, cautious</li></ul></section>
-            <section class="panel"><h3>Visual Continuity</h3><p>Linked refs: Catacomb Passage v2, Torchlight Profile Sheet, Symbol Atlas #3.</p></section>
-            <section class="panel"><h3>Costume Consistency</h3><p>Maya satchel on left shoulder. John's coat has no insignia.</p></section>
-            <section class="panel"><h3>Prop Consistency</h3><p>Torch A active, Journal weathered brown, Binding Relic not yet visible.</p></section>
-          </aside>
+          <div class="viz-image-slot" style="height:260px">
+            <div style="width:100%;height:100%;background:linear-gradient(180deg,#1a1208 0%,#0d0905 40%,#181208 100%);display:flex;align-items:center;justify-content:center;position:relative">
+              <!-- SVG Catacombs Illustration -->
+              <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0">
+                <!-- Dark stone background -->
+                <rect width="800" height="400" fill="#0a0805"/>
+                <!-- Arch -->
+                <path d="M200 400 L200 160 Q400 60 600 160 L600 400" fill="none" stroke="#2a1f0f" stroke-width="40"/>
+                <path d="M240 400 L240 175 Q400 90 560 175 L560 400" fill="#130d06"/>
+                <!-- Stone texture blocks -->
+                <rect x="200" y="200" width="40" height="30" fill="#1a1208" stroke="#2a1f10" stroke-width="1" opacity="0.8"/>
+                <rect x="200" y="235" width="40" height="30" fill="#161008" stroke="#251b0e" stroke-width="1" opacity="0.8"/>
+                <rect x="560" y="200" width="40" height="30" fill="#1a1208" stroke="#2a1f10" stroke-width="1" opacity="0.8"/>
+                <!-- Torch glow center -->
+                <radialGradient id="torchGlow" cx="50%" cy="55%" r="30%">
+                  <stop offset="0%" stop-color="#e8a84c" stop-opacity="0.5"/>
+                  <stop offset="60%" stop-color="#c06020" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                </radialGradient>
+                <ellipse cx="400" cy="220" rx="200" ry="150" fill="url(#torchGlow)"/>
+                <!-- Figures -->
+                <g opacity="0.85">
+                  <!-- Figure 1 (John) - left -->
+                  <ellipse cx="350" cy="380" rx="20" ry="8" fill="#000" opacity="0.5"/>
+                  <rect x="340" y="280" width="22" height="95" rx="4" fill="#1a1a2e"/>
+                  <rect x="338" y="265" width="26" height="30" rx="5" fill="#0f0f1a"/>
+                  <circle cx="351" cy="258" r="14" fill="#2a1f10"/>
+                  <!-- Torch arm extended -->
+                  <line x1="360" y1="295" x2="395" y2="260" stroke="#2a1a0a" stroke-width="4"/>
+                  <!-- Torch flame -->
+                  <ellipse cx="396" cy="252" rx="8" ry="12" fill="#e8a84c" opacity="0.9"/>
+                  <ellipse cx="396" cy="248" rx="5" ry="8" fill="#fff" opacity="0.6"/>
+                  <!-- Figure 2 (Maya) - right -->
+                  <ellipse cx="460" cy="380" rx="18" ry="7" fill="#000" opacity="0.5"/>
+                  <rect x="450" y="285" width="20" height="90" rx="4" fill="#1a0a0a"/>
+                  <rect x="448" y="270" width="24" height="28" rx="5" fill="#200a0a"/>
+                  <circle cx="460" cy="263" r="13" fill="#2a1510"/>
+                </g>
+                <!-- Carved symbols on walls -->
+                <g opacity="0.4" fill="none" stroke="#4a3520" stroke-width="2">
+                  <circle cx="260" cy="240" r="8"/>
+                  <path d="M256 236 L264 244 M264 236 L256 244"/>
+                  <circle cx="280" cy="270" r="5"/>
+                  <path d="M545 245 L555 255 M545 255 L555 245"/>
+                  <circle cx="540" cy="275" r="6"/>
+                </g>
+                <!-- Ground shadow -->
+                <rect x="0" y="370" width="800" height="30" fill="#000" opacity="0.5"/>
+                <!-- Vignette -->
+                <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+                  <stop offset="0%" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#000" stop-opacity="0.75"/>
+                </radialGradient>
+                <rect width="800" height="400" fill="url(#vignette)"/>
+              </svg>
+            </div>
+            <div class="viz-image-overlay">
+              <span class="viz-image-label">Scene 5a · Catacomb Passage · Page 16 draft visual</span>
+              <div class="viz-image-actions">
+                <button class="btn btn-ghost btn-xs">Add Variant</button>
+                <button class="btn btn-gold btn-xs"><i class="fa-solid fa-lock"></i> Lock Visual</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:var(--sp-sm);margin-top:var(--sp-sm)">
+            <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-backward"></i> Prior Scene Ref</button>
+            <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-rotate"></i> Revise Visual</button>
+            <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-code-compare"></i> Compare Reference</button>
+            <button class="btn btn-ghost btn-xs"><i class="fa-solid fa-note-sticky"></i> Lock Visual Notes</button>
+          </div>
+
+          <!-- Agents Console -->
+          <div class="agents-console" style="margin-top:var(--sp-md);border:1px solid var(--border-base);border-radius:var(--r-md);overflow:hidden">
+            <div class="agents-console-header">
+              <span class="agents-console-title">⬛ Agents Console</span>
+              <div style="display:flex;gap:4px">
+                <span style="font-size:10px;color:var(--text-muted)">4 agents active</span>
+                <button class="panel-btn"><i class="fa-solid fa-ellipsis"></i></button>
+              </div>
+            </div>
+
+            <div class="agents-grid">
+              <!-- Story Director -->
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <div class="agent-avatar director"><i class="fa-solid fa-compass-drafting"></i></div>
+                  <div class="agent-info">
+                    <div class="agent-name">Story Director</div>
+                    <div class="agent-role">Active word: mastering check…</div>
+                  </div>
+                </div>
+                <div class="agent-status-row">
+                  <span class="agent-status-badge status-active"><i class="fa-solid fa-circle" style="font-size:6px"></i> Active</span>
+                  <span style="font-size:9px;color:var(--text-dim)">0 issues</span>
+                </div>
+                <div class="agent-task">Status: Plotting page script</div>
+                <div class="agent-output">Last Output — Catacomb phrasing frame — "Into the Catacombs" sequence tightened. Scene 5a achieves objective tension. Recommend advancing to page break.</div>
+                <div class="agent-card-actions">
+                  <button class="btn btn-ghost btn-xs">Summt Boot Bant</button>
+                  <button class="btn btn-secondary btn-xs" style="margin-left:auto">Open Chat</button>
+                </div>
+              </div>
+
+              <!-- Canon Keeper -->
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <div class="agent-avatar keeper"><i class="fa-solid fa-scroll"></i></div>
+                  <div class="agent-info">
+                    <div class="agent-name">Canon Keeper</div>
+                    <div class="agent-role">Solent give the Hamogy check…</div>
+                  </div>
+                </div>
+                <div class="agent-status-row">
+                  <span class="agent-status-badge status-reviewing"><i class="fa-solid fa-circle" style="font-size:6px"></i> Reviewing</span>
+                  <span style="font-size:9px;color:var(--accent-gold)">2 checks</span>
+                </div>
+                <div class="agent-task">Status: Translating the Hamogy check</div>
+                <div class="agent-output">Last Output — Them see × Hookabge eth — Stone relic origin confirmed: Druid-built 400 yrs prior. Symbol carving canon matches Issue 1 visual ref.</div>
+                <div class="agent-card-actions">
+                  <button class="btn btn-gold btn-xs"><i class="fa-solid fa-check"></i> Accept</button>
+                  <button class="btn btn-secondary btn-xs" style="margin-left:auto">Open Chat</button>
+                </div>
+              </div>
+
+              <!-- Scene Writer -->
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <div class="agent-avatar writer"><i class="fa-solid fa-pen-nib"></i></div>
+                  <div class="agent-info">
+                    <div class="agent-name">Scene Writer</div>
+                    <div class="agent-role">Drafton gilim Open scene</div>
+                  </div>
+                </div>
+                <div class="agent-status-row">
+                  <span class="agent-status-badge status-drafting"><i class="fa-solid fa-circle" style="font-size:6px"></i> Drafting</span>
+                  <span style="font-size:9px;color:var(--text-dim)">pg 16</span>
+                </div>
+                <div class="agent-task">Status: Drafting page 15</div>
+                <div class="agent-output">Last Output — Tern athem pap upe to — Maya's whisper line revised: more tense. Panel 3 direction updated with broader environmental staging.</div>
+                <div class="agent-card-actions">
+                  <button class="btn btn-secondary btn-xs">Open Chat</button>
+                  <button class="btn btn-ghost btn-xs" style="margin-left:auto">Rerun</button>
+                </div>
+              </div>
+
+              <!-- Continuity Editor -->
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <div class="agent-avatar editor"><i class="fa-solid fa-shield-check"></i></div>
+                  <div class="agent-info">
+                    <div class="agent-name">Continuity Editor</div>
+                    <div class="agent-role">Fonicos coper an commented</div>
+                  </div>
+                </div>
+                <div class="agent-status-row">
+                  <span class="agent-status-badge status-input"><i class="fa-solid fa-circle" style="font-size:6px"></i> Needs Input</span>
+                  <span style="font-size:9px;color:var(--accent-red)">1 warn</span>
+                </div>
+                <div class="agent-task">Status: Monitoring</div>
+                <div class="agent-output">Last Output — Helmet page caloricity — ⚠ Timeline flag: John's torch cannot be the same one from Scene 3 (extinguished p.9). Requires continuity note.</div>
+                <div class="agent-card-actions">
+                  <button class="btn btn-danger btn-xs"><i class="fa-solid fa-triangle-exclamation"></i> 1 Warn</button>
+                  <button class="btn btn-secondary btn-xs" style="margin-left:auto">Open Chat</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat Strip -->
+            <div class="agent-chat-strip">
+              <div class="chat-log">
+                <div class="chat-msg">
+                  <span class="chat-msg-time">11:05</span>
+                  <span class="chat-msg-who">Canon Keeper:</span>
+                  <span class="chat-msg-text">Shuir suggested reworking wreck hoise along custom oo dangur.</span>
+                </div>
+                <div class="chat-msg">
+                  <span class="chat-msg-time">11:05</span>
+                  <span class="chat-msg-who writer">Scene Writer:</span>
+                  <span class="chat-msg-text">Standing by · The secreth·us and mythology check aligned.</span>
+                </div>
+                <div class="chat-msg">
+                  <span class="chat-msg-time">11:07</span>
+                  <span class="chat-msg-who user">You:</span>
+                  <span class="chat-msg-text">Canon Keeper — has the stone relic been described as glowing in any prior issue?</span>
+                </div>
+              </div>
+              <div class="chat-input-row">
+                <select style="background:var(--bg-input);border:1px solid var(--border-base);border-radius:var(--r-sm);color:var(--text-muted);padding:4px 8px;font-size:11px;outline:none;font-family:var(--font-sans)">
+                  <option>→ Canon Keeper</option>
+                  <option>→ Story Director</option>
+                  <option>→ Scene Writer</option>
+                  <option>→ Continuity Editor</option>
+                </select>
+                <input class="chat-input" id="chatInput" placeholder="Ask an agent… e.g. Has the stone relic appeared before?" />
+                <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+            </div>
+
+          </div><!-- /agents-console -->
+
+        </div><!-- /viz-panel -->
+
+      </div><!-- /col-center -->
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-right">
+
+        <!-- Continuity Warnings -->
+        <div class="panel-card glow" style="border-color:rgba(224,85,85,0.25)">
+          <div class="panel-header">
+            <span class="panel-title" style="color:var(--accent-red)"><i class="fa-solid fa-triangle-exclamation"></i> Continuity Warnings</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-ellipsis"></i></button>
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="warn-item">
+              <span class="warn-dot red"></span>
+              <span class="warn-text">Check: Catacomb's historical accuracy.</span>
+            </div>
+            <div class="warn-item">
+              <span class="warn-dot orange"></span>
+              <span class="warn-text">Verify: Timeline of events</span>
+            </div>
+            <div class="warn-item">
+              <span class="warn-dot red"></span>
+              <span class="warn-text">Reminder: The stone relic is led to druid powers. bind to past.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Threads -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-network-wired"></i> Active Threads</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="thread-item">
+              <i class="fa-solid fa-circle-play thread-icon"></i>
+              <span>Hunter's Pursuit</span>
+              <span class="thread-badge open">Active</span>
+            </div>
+            <div class="thread-item">
+              <i class="fa-solid fa-circle-dot thread-icon"></i>
+              <span>The Lost Druid Relic</span>
+              <span class="thread-badge">Open</span>
+            </div>
+            <div class="thread-item">
+              <i class="fa-solid fa-circle-dot thread-icon"></i>
+              <span>The Ritual Circle</span>
+              <span class="thread-badge">Open</span>
+            </div>
+            <div class="thread-item">
+              <i class="fa-solid fa-circle-half-stroke thread-icon"></i>
+              <span>John's Hidden Past</span>
+              <span class="thread-badge">Setup</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Characters in Scene -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-users"></i> Characters in Scene</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="char-row">
+              <div class="char-thumb" style="background:linear-gradient(135deg,#2a3a6a,#3a4a8a);color:white;font-size:11px;font-weight:700">JW</div>
+              <div class="char-details">
+                <div class="char-name">John Walker <span style="font-size:9px;color:var(--accent-blue)">(Protagonist)</span></div>
+                <div class="char-state">Status: Armed, torchbearer, on alert</div>
+                <div class="char-state" style="font-size:9px">Knows: relic exists. Doesn't know: its binding</div>
+              </div>
+              <span style="font-size:9px;color:var(--status-active)">●●</span>
+            </div>
+            <div class="char-row">
+              <div class="char-thumb" style="background:linear-gradient(135deg,#6a2a3a,#8a3a4a);color:white;font-size:11px;font-weight:700">MR</div>
+              <div class="char-details">
+                <div class="char-name">Maya Reed <span style="font-size:9px;color:var(--accent-teal)">(Relic Ally)</span></div>
+                <div class="char-state">Reason: Protégé of sorcery staffing</div>
+                <div class="char-state" style="font-size:9px">Status: Mentoring. Knowledge: partial.</div>
+              </div>
+              <span style="font-size:9px;color:var(--status-active)">●●</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Continuity -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-eye"></i> Visual Continuity</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="vis-thumb-grid">
+              <div class="vis-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0805,#1a1208);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--text-dim)"><i class="fa-solid fa-dungeon"></i></div>
+                <div class="vis-thumb-label">Old Catacombs Inte…</div>
+              </div>
+              <div class="vis-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0810,#12101a);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--text-dim)"><i class="fa-solid fa-hand-sparkles"></i></div>
+                <div class="vis-thumb-label">Druidic Scene Char…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Costume Consistency -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-shirt"></i> Costume Consistency</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="consistency-item"><i class="fa-solid fa-check consistency-icon"></i><span>Maya's neath and John's ignets not.</span></div>
+            <div class="consistency-item"><i class="fa-solid fa-check consistency-icon warn"></i><span>John's sword: unseen: of: at-present.</span></div>
+          </div>
+        </div>
+
+        <!-- Prop Consistency -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-toolbox"></i> Prop Consistency</span>
+            <div class="panel-actions">
+              <button class="panel-btn"><i class="fa-solid fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="prop-thumb-grid">
+              <div class="prop-thumb"><i class="fa-solid fa-scroll"></i></div>
+              <div class="prop-thumb"><i class="fa-solid fa-fire-flame-simple"></i></div>
+              <div class="prop-thumb"><i class="fa-solid fa-gem"></i></div>
+            </div>
+            <div style="margin-top:6px;font-size:10px;color:var(--text-muted)">Ancient Druidic Stone · Scene Relic, Steels</div>
+            <div style="font-size:10px;color:var(--text-dim);margin-top:2px">Pro Lairic, and 100 warning Steaclid sword</div>
+          </div>
+        </div>
+
+      </div><!-- /col-right -->
+
+    </div><!-- /ws-dashboard -->
+
+    <!-- ══════════════════════════════════════ SERIES SETUP ══ -->
+    <div class="workspace tab-workspace" id="ws-setup">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Series Setup</div>
+          <div class="workspace-subtitle">Project identity, story architecture, visual rules, and structural framework</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-export"></i> Export Config</button>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Save Setup</button>
         </div>
       </div>
-    </template>
+      <div class="tab-workspace-scroll" id="setup-content"></div>
+    </div>
 
-    <script src="app.js"></script>
-  </body>
+    <!-- ══════════════════════════════════════ CHARACTERS ═════ -->
+    <div class="workspace tab-workspace" id="ws-characters">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Characters</div>
+          <div class="workspace-subtitle">Build, manage, and track all characters across the entire story universe</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div class="search-bar" style="width:200px">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="search-input" placeholder="Search characters…" />
+          </div>
+          <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-filter"></i> Filter</button>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Character</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="characters-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ WORLD ══════════ -->
+    <div class="workspace tab-workspace" id="ws-world">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">World</div>
+          <div class="workspace-subtitle">Geography, locations, environment, culture, technology, and worldbuilding</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div class="search-bar" style="width:200px">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="search-input" placeholder="Search world…" />
+          </div>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Location</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="world-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ FACTIONS ═══════ -->
+    <div class="workspace tab-workspace" id="ws-factions">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Factions</div>
+          <div class="workspace-subtitle">Organizations, power structures, secret societies, and institutions</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Faction</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="factions-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ TIMELINE ═══════ -->
+    <div class="workspace tab-workspace" id="ws-timeline">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Timeline</div>
+          <div class="workspace-subtitle">Chronology engine — events, reveals, hidden history, and story logic gates</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div class="filter-chips" style="margin-bottom:0">
+            <button class="filter-chip active">All Events</button>
+            <button class="filter-chip">Key Events</button>
+            <button class="filter-chip">Hidden</button>
+            <button class="filter-chip">Reveals</button>
+          </div>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Event</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="timeline-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ CANON WIKI ═════ -->
+    <div class="workspace tab-workspace" id="ws-wiki">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Canon Wiki</div>
+          <div class="workspace-subtitle">Living lore index — approved story truth, cross-linked entities, and canon references</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div class="search-bar" style="width:220px">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="search-input" placeholder="Search canon…" />
+          </div>
+          <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-filter"></i> Filter Type</button>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> New Entry</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="wiki-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ STORY PLANNING ═ -->
+    <div class="workspace tab-workspace" id="ws-planning">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Story Planning</div>
+          <div class="workspace-subtitle">Series → Volume → Issue → Sequence → Scene hierarchy and arc management</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-map"></i> Arc View</button>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> New Issue</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="planning-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ SCENE/PAGE/PANEL -->
+    <div class="workspace tab-workspace" id="ws-builder">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Scene · Page · Panel Builder</div>
+          <div class="workspace-subtitle">Sequential art planning — from scene beats to individual panel specifications</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div style="display:flex;background:var(--bg-card);border:1px solid var(--border-base);border-radius:var(--r-sm);overflow:hidden">
+            <button class="btn btn-ghost btn-sm builder-mode-btn active-mode" data-mode="scene" style="border-radius:0;border:none">Scene</button>
+            <button class="btn btn-ghost btn-sm builder-mode-btn" data-mode="page" style="border-radius:0;border:none;border-left:1px solid var(--border-base)">Page</button>
+            <button class="btn btn-ghost btn-sm builder-mode-btn" data-mode="panel" style="border-radius:0;border:none;border-left:1px solid var(--border-base)">Panel</button>
+          </div>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> New Scene</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="builder-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ VISUAL CONT. ═══ -->
+    <div class="workspace tab-workspace" id="ws-visuals">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Visual Continuity</div>
+          <div class="workspace-subtitle">Visual memory system — approved references, style consistency, and continuity tracking</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div class="filter-chips" style="margin-bottom:0">
+            <button class="filter-chip active">All</button>
+            <button class="filter-chip">Scenes</button>
+            <button class="filter-chip">Characters</button>
+            <button class="filter-chip">Locations</button>
+            <button class="filter-chip">Props</button>
+          </div>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Reference</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="visuals-content"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ PAGE COMPOSITION -->
+    <div class="workspace" id="ws-composition" style="display:none;flex:1">
+      <div id="composition-content" style="width:100%;height:100%"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════ AGENT CONSOLE ══ -->
+    <div class="workspace tab-workspace" id="ws-agents">
+      <div class="workspace-header">
+        <div>
+          <div class="workspace-title">Agent Console</div>
+          <div class="workspace-subtitle">Multi-agent creative intelligence — director, keeper, writer, editor</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-plus"></i> Add Agent</button>
+          <button class="btn btn-primary btn-sm"><i class="fa-solid fa-play"></i> Run All Agents</button>
+        </div>
+      </div>
+      <div class="tab-workspace-scroll" id="agents-content"></div>
+    </div>
+
+  </div><!-- /main-content -->
+
+</div><!-- /#app -->
+
+<!-- JavaScript -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
 </html>
